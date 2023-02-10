@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import DashboardHotel from "./pages/DashboardHotel";
+import DashhboardOfficer from "./pages/DashboardOfficer";
+import Room from "./pages/RoomData";
+import RoomType from "./pages/RoomTypeData";
+import Booking from "./pages/BookingData";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DashboardHotel />}></Route>
+        <Route path="/management" element={<DashhboardOfficer />}></Route>
+        <Route path="/management/room" element={<Room />}></Route>
+        <Route path="/management/room-type" element={<RoomType />}></Route>
+        <Route path="/management/booking" element={<Booking />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
