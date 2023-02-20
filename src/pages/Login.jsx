@@ -46,7 +46,7 @@ export default function Login() {
                 <form onSubmit={
                     (event) => loginProcess(event)
                 }>
-                    <h5 className="mt-5">Email</h5>
+                    <h5 className="mt-5">Username</h5>
                     <div class="input-group input-group-lg">
                         <input type="text" class="form-control" placeholder="ex: Johnson" value={username} onChange={(event) => setUsername(event.target.value)} required/>
                     </div>

@@ -4,6 +4,7 @@ import DashhboardOfficer from "./pages/DashboardOfficer";
 import Room from "./pages/RoomData";
 import RoomType from "./pages/RoomTypeData";
 import Booking from "./pages/BookingData";
+import User from "./pages/User";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
         <Route path="/management/room" element={<Room />}></Route>
         <Route path="/management/room-type" element={<RoomType />}></Route>
         <Route path="/management/booking" element={<Booking />}></Route>
+        <Route path="/management/user" element={<User />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
       </Routes>

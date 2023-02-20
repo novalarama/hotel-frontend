@@ -22,14 +22,20 @@ export default function Navbar(props) {
                     </Link>
                 </li>
                 <li>
-                    <Link id="room" to="/management/room" className="nav-link button">
+                    <Link id="room" to="/management/user" className="nav-link button">
                         <i className="bx bx-user"></i>
+                        <span className="links_name ms-2">User</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link id="room" to="/management/room" className="nav-link button">
+                        <i className="bx bx-bed"></i>
                         <span className="links_name ms-2">Room</span>
                     </Link>
                 </li>
                 <li>
                     <Link id="room-type" to="/management/room-type" className="nav-link button">
-                        <i className="bx bx-chat"></i>
+                        <i className="bx bx-home"></i>
                         <span className="links_name ms-2">Room Type</span>
                     </Link>
                 </li>
