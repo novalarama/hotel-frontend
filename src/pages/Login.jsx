@@ -23,8 +23,12 @@ export default function Login() {
                 let token = response.data.token
                 localStorage.setItem(`token`, token)
 
-                let dataUser = JSON.stringify(response.data)
-                localStorage.setItem(`user`, dataUser)
+                let data = JSON.stringify(response.data)
+                localStorage.setItem(`user`, data)
+                
+                let dataUser = JSON.stringify(response.data.data)
+                localStorage.setItem('data_user', dataUser)
+                localStorage.setItem('user_role', response.data.user_role)
 
                 alert("Login Successfull")
                 window.location = "./management"

@@ -58,6 +58,7 @@ export default function UserData() {
     setUserEmail("");
     setUserPassword("");
     setUserRole("");
+    setChangePassword(true)
     setUploadPhoto(true);
   };
 
@@ -121,7 +122,9 @@ export default function UserData() {
         request.append(`user_photo`, userPhoto);
       }
       request.append(`user_email`, userEmail);
-      request.append(`user_password`, userPassword);
+      if(changePassword === true) {
+        request.append(`user_password`, userPassword);
+      }
       request.append(`user_role`, userRole);
 
       axios
@@ -229,7 +232,6 @@ export default function UserData() {
                 </li>
               </ul>
               <div className="table-wrapper-scroll-y my-custom-scrollbar">
-                {" "}
                 {userList.map((item) => (
                   <ul className="list-group list-group-flush mt-2">
                     <li
@@ -278,7 +280,7 @@ export default function UserData() {
                 <div className="modal-dialog modal-md">
                   <div className="modal-content">
                     <div className="modal-header bg-white">
-                      <h4 className="">Add New Use</h4>
+                      <h4 className="">Add New User</h4>
                       <button
                         onClick={() => modal.hide()}
                         className="btn btn-light"
@@ -319,7 +321,7 @@ export default function UserData() {
                           <div className="col-md-10">
                             <small>Password</small>
                           </div>
-                          <div className="col-md-1 mb-2">
+                          {action === 'edit' ? <div className="col-md-1 mb-2">
                             <button
                             type="button"
                               onClick={() => {
@@ -330,7 +332,7 @@ export default function UserData() {
                             >
                               <span className="fa fa-edit"></span>
                             </button>
-                          </div>
+                          </div> : <div />}
                         </div>
                         <input
                           type="password"
@@ -405,7 +407,8 @@ export default function UserData() {
       </div>
       <div className="col-lg-3 mt-4 cardContent">
         <div className="m-4">
-          <h1>ss</h1>
+          <h1>{action}</h1>
+          <h1>{changePassword}</h1>
         </div>
       </div>
     </div>
